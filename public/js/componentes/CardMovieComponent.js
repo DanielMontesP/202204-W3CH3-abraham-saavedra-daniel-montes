@@ -40,7 +40,7 @@ class CardMovieComponent extends Component {
                     <i class="icon--score fas fa-star" title="5/5"></i>
                   </li>
                 </ul>
-                <i class="fas fa-times-circle icon--delete-${this.id}"></i>`;
+                <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
   }
 }
 
