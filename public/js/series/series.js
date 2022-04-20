@@ -54,4 +54,4 @@ const series = [
   },
 ];
 
-export default series;
+export default { series };
