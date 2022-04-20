@@ -7,6 +7,7 @@ class CardMovieComponent extends Component {
     this.serie = serie;
 
     this.render();
+    this.button();
   }
 
   render() {
