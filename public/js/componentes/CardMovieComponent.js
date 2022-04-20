@@ -2,12 +2,11 @@ import Component from "./Component.js";
 
 class CardMovieComponent extends Component {
   serie;
-  constructor(parentElement, serie) {
-    super(parentElement, "li", "serie");
+  constructor(parentElement, serie, id) {
+    super(parentElement, "li", `serie serie--${id}`);
     this.serie = serie;
 
     this.render();
-    this.button();
   }
 
   render() {
@@ -35,7 +34,7 @@ class CardMovieComponent extends Component {
                     <i class="icon--score fas fa-star" title="5/5"></i>
                   </li>
                 </ul>
-                <i class="fas fa-times-circle icon--delete"></i>`;
+                <i class="fas fa-times-circle icon--delete-${this.serie.id}"></i>`;
   }
 }
 
