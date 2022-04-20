@@ -5,6 +5,7 @@ import Component from "./componentes/Component.js";
 
 const container = document.querySelector(".container");
 
+
 const unWatchedSerieList = document.querySelector(".series-list");
 
 const watchedSeriesList = document.querySelector(
@@ -16,5 +17,6 @@ const createCard = (item, index, arr) => {
     item.watched === true
       ? new CardMovieComponent(watchedSeriesList, item, item.id)
       : new CardMovieComponent(watchedSeriesList, item, item.id);
+
 };
 series.forEach(createCard);
