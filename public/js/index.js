@@ -4,7 +4,19 @@ import CardMovieComponent from "./componentes/CardMovieComponent.js";
 import Component from "./componentes/Component.js";
 
 const container = document.querySelector(".container");
+
+
+const unWatchedSerieList = document.querySelector(".series-list");
+
+const watchedSeriesList = document.querySelector(
+  ".series-list.series-list--watched"
+);
+
 const createCard = (item, index, arr) => {
-  const newCard = new CardMovieComponent(container, item);
+  const newCard =
+    item.watched === true
+      ? new CardMovieComponent(watchedSeriesList, item, item.id)
+      : new CardMovieComponent(watchedSeriesList, item, item.id);
+
 };
 series.forEach(createCard);
