@@ -18,6 +18,5 @@ const createCard = (item, index, arr) => {
 };
 
 modArray("series", 1, "watched", true);
-debugger;
-console.log(series[1]);
+
 series.forEach(createCard);
