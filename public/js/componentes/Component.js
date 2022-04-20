@@ -1,9 +1,10 @@
 class Component {
   element;
 
-  constructor(parentElement, clase, element) {
+  constructor(parentElement, element, clase) {
     this.element = document.createElement(element);
     this.element.className = clase;
+
     parentElement.append(this.element);
   }
 }
