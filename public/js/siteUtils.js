@@ -1,3 +1,3 @@
-export const modArray = (array, position, property, newvalue) => {
-  array[position].property = newvalue;
+export default const modArray = (arrayToMod, position, property, newvalue) => {
+  arrayToMod[position].(property) = newvalue;
 };
