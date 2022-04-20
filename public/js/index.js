@@ -9,15 +9,14 @@ const container = document.querySelector(".container");
 
 const mainPage = new ContainerComponent(container);
 
-const seriesList = series;
-
 const createCard = () => {
   const unWatchedSerieList = document.querySelector(".series-list");
 
   const watchedSeriesList = document.querySelector(
     ".series-list.series-list--watched"
   );
-  seriesList.forEach((serie) => {
+  const seriesList = series;
+  seriesList.series.forEach((serie) => {
     const newCard =
       serie.watched === true
         ? new CardMovieComponent(

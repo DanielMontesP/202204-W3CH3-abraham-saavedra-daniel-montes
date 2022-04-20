@@ -7,11 +7,12 @@ class CardMovieComponent extends Component {
   poster;
   constructor(parentElement, serie, id, name, creator, poster) {
     super(parentElement, "li", `serie serie--${id}`);
+
     this.serie = serie;
-    this.render();
     this.name = name;
     this.creator = creator;
     this.poster = poster;
+    this.render();
   }
 
   render() {
