@@ -2,6 +2,7 @@
 import series from "./series/series.js";
 import CardMovieComponent from "./componentes/CardMovieComponent.js";
 import Component from "./componentes/Component.js";
+import modArray from "./siteUtils.js";
 import ContainerComponent from "./componentes/ContainerComponent.js";
 
 const container = document.querySelector(".container");
