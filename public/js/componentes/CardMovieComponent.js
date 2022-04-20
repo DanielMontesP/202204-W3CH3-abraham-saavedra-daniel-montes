@@ -2,21 +2,26 @@ import Component from "./Component.js";
 
 class CardMovieComponent extends Component {
   serie;
-  constructor(parentElement, serie, id) {
+  name;
+  creator;
+  poster;
+  constructor(parentElement, serie, id, name, creator, poster) {
     super(parentElement, "li", `serie serie--${id}`);
     this.serie = serie;
-
     this.render();
+    this.name = name;
+    this.creator = creator;
+    this.poster = poster;
   }
 
   render() {
     this.element.innerHTML = ` <img
                   class="serie__poster"
-                  src=${this.serie.poster}
-                  alt="${this.serie.name} poster"
+                  src=${this.poster}
+                  alt="${this.name} poster"
                 />
-                <h4 class="serie__title">${this.serie.name}</h4>
-                <p class="serie__info">${this.serie.creator} (1999)</p>
+                <h4 class="serie__title">${this.name}</h4>
+                <p class="serie__info">${this.creator} (1999)</p>
                 <ul class="score">
                   <li class="score__star">
                     <i class="icon--score fas fa-star" title="1/5"></i>
@@ -34,7 +39,7 @@ class CardMovieComponent extends Component {
                     <i class="icon--score fas fa-star" title="5/5"></i>
                   </li>
                 </ul>
-                <i class="fas fa-times-circle icon--delete-${this.serie.id}"></i>`;
+                <i class="fas fa-times-circle icon--delete-${this.id}"></i>`;
   }
 }
 
