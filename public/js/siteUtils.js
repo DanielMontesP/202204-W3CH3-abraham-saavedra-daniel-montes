@@ -1,6 +1,6 @@
-const modArray = (arrayToMod, position, property, newvalue) => {
+const delItemArray = (arrayToMod, position) => {
   // arrayToMod[position].(property) = newvalue};
-  arrayToMod[position] = newvalue;
+  arrayToMod[position].borrado = true;
 };
 
-export default modArray;
+export default delItemArray;
