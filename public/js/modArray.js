@@ -1,5 +1,4 @@
 const ModArray = (arrayToMod, itemPos, itemToMod, newValue) => {
-  debugger;
   switch (itemToMod) {
     case "watched":
       arrayToMod.series[itemPos][itemToMod] = newValue;

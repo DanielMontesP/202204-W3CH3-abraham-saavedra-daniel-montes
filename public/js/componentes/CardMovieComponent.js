@@ -1,4 +1,4 @@
-import DelItemArray from "../delItemArray.js";
+import DelItemArray from "../DelItemArray.js";
 import Component from "./Component.js";
 import series from "../series/series.js";
 
@@ -10,7 +10,7 @@ class CardMovieComponent extends Component {
   creator;
   poster;
   deleted;
-  constructor(parentElement, serie, id, name, creator, poster, deleted) {
+  constructor(parentElement, serie, id, name, creator, poster) {
     super(parentElement, "li", `serie serie--${id}`);
 
     this.id = id;
@@ -49,13 +49,12 @@ class CardMovieComponent extends Component {
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
-    idBtClose = `${this.id}`;
   }
 
-  addEvents() {
+  addEvents(this) {
     const iconDelete = document.querySelector(".icon--" + idBtClose);
     iconDelete.addEventListener("click", function () {
-      let iconId = String(this.className).replace(
+      const iconId = String(this.className).replace(
         "fas fa-times-circle icon--delete icon--",
         ""
       );
