@@ -2,7 +2,6 @@ import DelItemArray from "../DelItemArray.js";
 import Component from "./Component.js";
 import series from "../series/series.js";
 
-let idBtClose = "";
 class CardMovieComponent extends Component {
   id;
   serie;

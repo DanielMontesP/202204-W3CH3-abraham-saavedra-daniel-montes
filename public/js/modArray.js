@@ -9,4 +9,5 @@ const ModArray = (arrayToMod, itemPos, itemToMod, newValue) => {
     default:
   }
 };
+
 export default ModArray;
