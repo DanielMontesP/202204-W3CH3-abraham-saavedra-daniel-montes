@@ -1,5 +1,4 @@
 import createCard from "./index.js";
-// import series from "./series/series.js";
 
 const clsContent = () => {
   const listaSeries = document.getElementsByClassName("serie");
@@ -7,7 +6,6 @@ const clsContent = () => {
 };
 
 const DelItemArray = (arrayToMod, itemToMod, itemPos) => {
-  //const arrayToMod = series;
   arrayToMod.series[itemPos][itemToMod] = true; // eslint-disable no-param-reassign
   clsContent();
   createCard();
