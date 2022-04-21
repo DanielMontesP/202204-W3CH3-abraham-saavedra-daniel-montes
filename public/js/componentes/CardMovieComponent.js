@@ -1,6 +1,7 @@
 import DelItemArray from "../DelItemArray.js";
 import Component from "./Component.js";
 import series from "../series/series.js";
+
 const idBtClose = "";
 class CardMovieComponent extends Component {
   id;
@@ -17,11 +18,10 @@ class CardMovieComponent extends Component {
     this.name = name;
     this.creator = creator;
     this.poster = poster;
-    this.deleted = false;
+    this.deleted = deleted;
     this.render();
     this.addEvents();
   }
-
   render() {
     this.element.innerHTML = ` <img
                   class="serie__poster"
@@ -48,10 +48,8 @@ class CardMovieComponent extends Component {
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
-
     idBtClose = this.id;
   }
-
   addEvents() {
     const iconDelete = document.querySelector(".icon--" + idBtClose);
     iconDelete.addEventListener("click", function () {
@@ -59,8 +57,10 @@ class CardMovieComponent extends Component {
         "fas fa-times-circle icon--delete icon--",
         ""
       );
+
       DelItemArray(series, "deleted", iconId - 1);
     });
   }
 }
+
 export default CardMovieComponent;
