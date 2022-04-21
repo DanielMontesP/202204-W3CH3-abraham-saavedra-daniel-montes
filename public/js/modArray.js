@@ -1,10 +1,10 @@
 const modArray = (arrayToMod, itemPos, propToMod, newValue) => {
   switch (propToMod) {
     case "watched":
-      arrayToMod[itemPos].propToMod = newValue;
+      arrayToMod[itemPos].watched = newValue;
       break;
     case "score":
-      arrayToMod[itemPos].propToMod += 1;
+      arrayToMod[itemPos].watched += 1;
       break;
     default:
   }
