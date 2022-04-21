@@ -10,7 +10,7 @@ class CardMovieComponent extends Component {
   creator;
   poster;
   deleted;
-  constructor(parentElement, serie, id, name, creator, poster) {
+  constructor(parentElement, serie, id, name, creator, poster, deleted) {
     super(parentElement, "li", `serie serie--${id}`);
 
     this.id = id;
@@ -49,8 +49,9 @@ class CardMovieComponent extends Component {
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
+
+    idBtClose = this.className;
   }
-  idBtClose = this.className;
 
   addEvents() {
     debugger;
