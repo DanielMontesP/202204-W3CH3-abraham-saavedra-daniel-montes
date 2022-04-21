@@ -13,7 +13,7 @@ const createCard = () => {
   );
   const seriesList = series;
 
-  seriesList.series.forEach((serie) => {
+  seriesList.forEach((serie) => {
     new CardMovieComponent(
       serie.watched ? watchedSeriesList : unWatchedSerieList,
       serie,
