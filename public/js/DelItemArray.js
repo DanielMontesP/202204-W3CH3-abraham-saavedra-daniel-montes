@@ -6,9 +6,7 @@ const clsContent = () => {
 };
 
 const DelItemArray = (arrayToMod, itemToMod, itemPos) => {
-  arrayToMod.series[itemPos][
-    itemToMod
-  ] = true; /* eslint-disable no-param-reassign */
+  arrayToMod.series[itemPos][itemToMod] = true;
   clsContent();
   createCard();
 };

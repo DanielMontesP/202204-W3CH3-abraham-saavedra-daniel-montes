@@ -65,5 +65,4 @@ class CardMovieComponent extends Component {
     });
   }
 }
-
 export default CardMovieComponent;
