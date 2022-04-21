@@ -1,3 +1,4 @@
+import DelItemArray from "../delItemArray.js";
 import Component from "./Component.js";
 
 class CardMovieComponent extends Component {
@@ -5,14 +6,17 @@ class CardMovieComponent extends Component {
   name;
   creator;
   poster;
-  constructor(parentElement, serie, id, name, creator, poster) {
+  deleted;
+  constructor(parentElement, serie, id, name, creator, poster, deleted) {
     super(parentElement, "li", `serie serie--${id}`);
 
     this.serie = serie;
     this.name = name;
     this.creator = creator;
     this.poster = poster;
+    this.deleted = false;
     this.render();
+    this.addEvents();
   }
 
   render() {
@@ -25,7 +29,7 @@ class CardMovieComponent extends Component {
                 <p class="serie__info">${this.creator} (1999)</p>
                 <ul class="score">
                   <li class="score__star">
-                    <i class="icon--score fas fa-star" title="1/5"></i>
+                    <i class="icon--score fas fa-star" title="1/5"><a href="javascript:modArray(series,1,1)"></a></i>
                   </li>
                   <li class="score__star">
                     <i class="icon--score fas fa-star" title="2/5"></i>
@@ -37,10 +41,18 @@ class CardMovieComponent extends Component {
                     <i class="icon--score fas fa-star" title="4/5"></i>
                   </li>
                   <li class="score__star">
-                    <i class="icon--score fas fa-star" title="5/5"></i>
+                    <i class="icon--score fas fa-star" title="5/5"><a href='javascript:modi();'>aqui</a></i>
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
+  }
+  debugger;
+  addEvents() {
+    const iconDelete = document.querySelector(".icon--delete");
+    iconDelete.addEventListener("click", function () {
+      debugger;
+      DelItemArray(series, this);
+    });
   }
 }
 

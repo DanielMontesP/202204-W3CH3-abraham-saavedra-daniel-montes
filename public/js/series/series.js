@@ -9,6 +9,7 @@ const series = [
     watched: true,
     score: 5,
     emmies: 21,
+    deleted: false,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const series = [
     watched: false,
     score: 0,
     emmies: 164,
+    deleted: false,
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const series = [
     watched: true,
     score: 5,
     emmies: 116,
+    deleted: false,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ const series = [
     watched: true,
     score: 5,
     emmies: 53,
+    deleted: false,
   },
   {
     id: 5,
@@ -51,6 +55,7 @@ const series = [
     watched: false,
     score: 0,
     emmies: 0,
+    deleted: false,
   },
 ];
 
