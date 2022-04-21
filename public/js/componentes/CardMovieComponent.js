@@ -49,17 +49,19 @@ class CardMovieComponent extends Component {
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
-    idBtClose = this.id;
   }
+  idBtClose = this.className;
 
   addEvents() {
+    debugger;
     const iconDelete = document.querySelector(".icon--" + idBtClose);
     iconDelete.addEventListener("click", function () {
+      debugger;
       const iconId = String(this.className).replace(
         "fas fa-times-circle icon--delete icon--",
         ""
       );
-      DelItemArray(series, "deleted", iconId - 1);
+      DelItemArray(series, "deleted", iconId + 1);
     });
   }
 }
