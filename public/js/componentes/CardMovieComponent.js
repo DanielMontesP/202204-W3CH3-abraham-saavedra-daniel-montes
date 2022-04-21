@@ -52,6 +52,7 @@ class CardMovieComponent extends Component {
                 idBtClose = ${this.id};                    
   }
 
+
   addEvents() {
     const iconDelete = document.querySelector(".icon--" + idBtClose);
     iconDelete.addEventListener("click", function () {
