@@ -1,4 +1,3 @@
-//const modArray = (arrayToMod, itemPos, newValue) => {
 const ModArray = (arrayToMod, itemPos, itemToMod, newValue) => {
   debugger;
   switch (itemToMod) {
@@ -6,7 +5,7 @@ const ModArray = (arrayToMod, itemPos, itemToMod, newValue) => {
       arrayToMod.series[itemPos][itemToMod] = newValue;
       break;
     case "score":
-      arrayToMod.series[itemPos][score] += 1;
+      arrayToMod.series[itemPos][itemToMod] += 1;
       break;
     default:
   }

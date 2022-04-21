@@ -14,19 +14,20 @@ const createCard = () => {
   const seriesList = [...series.series, { deleted: false }];
 
   seriesList.forEach((serie) => {
-    debugger;
-    new CardMovieComponent(
-      serie.watched ? watchedSeriesList : unWatchedSerieList,
-      serie,
-      serie.id,
-      serie.name,
-      serie.creator,
-      serie.poster,
-      serie.deleted
-    );
+    if (!serie.deleted) {
+      new CardMovieComponent(
+        serie.watched ? watchedSeriesList : unWatchedSerieList,
+        serie,
+        serie.id,
+        serie.name,
+        serie.creator,
+        serie.poster,
+        serie.deleted
+      );
+    }
   });
 };
 
-//modArray(series, 1, "watched", true);
-
 createCard();
+
+export default createCard;
