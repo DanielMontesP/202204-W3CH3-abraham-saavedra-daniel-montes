@@ -1,5 +1,4 @@
 import CounterParagraph from "./CounterParagraph.js";
-import ContainerComponent from "./ContainerComponent.js";
 
 describe("Given a CounterParagraph constructor", () => {
   let container;
