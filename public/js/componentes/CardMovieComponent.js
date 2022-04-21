@@ -1,4 +1,5 @@
 import DelItemArray from "../DelItemArray.js";
+import series from "../series/series.js";
 import Component from "./Component.js";
 
 let idBtClose = "";
@@ -54,10 +55,10 @@ class CardMovieComponent extends Component {
   addEvents() {
     const iconDelete = document.querySelector(".icon--" + idBtClose);
     iconDelete.addEventListener("click", function clikis() {
-      const iconId = String(this.className);
+      let iconId = String(this.className);
       iconId = iconId.replace("fas fa-times-circle icon--delete icon--", "");
 
-      DelItemArray("deleted", iconId - 1);
+      DelItemArray(series, "deleted", iconId - 1);
     });
   }
 }

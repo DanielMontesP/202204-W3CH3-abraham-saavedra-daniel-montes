@@ -3,7 +3,7 @@ import CardMovieComponent from "./componentes/CardMovieComponent.js";
 import ContainerComponent from "./componentes/ContainerComponent.js";
 
 const container = document.querySelector(".container");
-const mainPage = new ContainerComponent(container);
+//const mainPage = new ContainerComponent(container);
 
 const createCard = () => {
   const unWatchedSerieList = document.querySelector(".series-list");
