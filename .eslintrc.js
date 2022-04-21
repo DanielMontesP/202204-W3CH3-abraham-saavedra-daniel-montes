@@ -11,7 +11,6 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "no-new": "off",
     "import/extensions": "off",
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
