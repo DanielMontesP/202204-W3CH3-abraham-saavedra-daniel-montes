@@ -48,10 +48,9 @@ class CardMovieComponent extends Component {
                     <i class="icon--score fas fa-star" title="5/5"><a href='javascript:modi();'>aqui</a></i>
                   </li>
                 </ul>
-                <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`; 
-         idBtClose = ${this.id};                          
+                <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
+    idBtClose = this.id;
   }
- 
 
   addEvents() {
     const iconDelete = document.querySelector(".icon--" + idBtClose);
