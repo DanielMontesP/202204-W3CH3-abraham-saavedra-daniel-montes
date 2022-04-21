@@ -1,14 +1,15 @@
 import Component from "./Component.js";
+import CounterParagraph from "./CounterParagraph.js";
 
 class ContainerComponent extends Component {
-  pendingList;
-  watchedList;
-  constructor(parentElement, pendingList, watchedList) {
+  seriesList;
+  constructor(parentElement, seriesList) {
     super(parentElement, "div", "container");
-    this.pendingList = pendingList;
-    this.watchedList = watchedList;
+    this.seriesList = seriesList;
 
     this.render();
+    this.watchedHeader();
+    this.unWatchedHeader();
   }
 
   render() {
@@ -34,6 +35,34 @@ class ContainerComponent extends Component {
           </section>
         </section>
       </main>`;
+  }
+
+  watchedHeader() {
+    const infoWatchedSeries = document.querySelector(".series-watched h3");
+    let counter = 0;
+    this.seriesList.forEach((serie) => {
+      if (serie.watched) {
+        counter += 1;
+      } else {
+        counter += 0;
+      }
+    });
+
+    new CounterParagraph(infoWatchedSeries, "watched series", counter);
+  }
+
+  unWatchedHeader() {
+    const infoPendingSeries = document.querySelector(".series-pending h3");
+    let counter = 0;
+    this.seriesList.forEach((serie) => {
+      if (!serie.watched) {
+        counter += 1;
+      } else {
+        counter += 0;
+      }
+    });
+
+    new CounterParagraph(infoPendingSeries, "series pending to watch", counter);
   }
 }
 
