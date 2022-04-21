@@ -15,6 +15,7 @@ module.exports = {
     "import/extensions": "off",
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
+    "no-new": "off",
 
     "lines-between-class-members": [
       "error",
