@@ -1,11 +1,11 @@
 import series from "./series/series.js";
 
-const modArray = (itemPos, propToMod, newValue) => {
-  switch (propToMod) {
+const modArray = (arrayToMod, itemPos, newValue) => {
+  switch (arrayToMod) {
     case "watched":
       series.series[itemPos].watched = newValue;
       break;
-    case "score":
+    case "series":
       series.series[itemPos].watched = newValue;
       break;
     default:
