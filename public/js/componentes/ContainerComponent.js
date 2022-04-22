@@ -1,14 +1,15 @@
 import Component from "./Component.js";
+import CounterParagraph from "./CounterParagraph.js";
 
 class ContainerComponent extends Component {
-  pendingList;
-  watchedList;
-  constructor(parentElement, pendingList, watchedList) {
+  seriesList;
+  constructor(parentElement, seriesList) {
     super(parentElement, "div", "container");
-    this.pendingList = pendingList;
-    this.watchedList = watchedList;
+    this.seriesList = seriesList;
 
     this.render();
+    this.watchedHeader();
+    this.unWatchedHeader();
   }
 
   render() {
@@ -20,20 +21,66 @@ class ContainerComponent extends Component {
           <h2 class="section-title">Series list</h2>
           <section class="series-pending">
             <h3 class="subsection-title">Pending series</h3>
-            <p class="info">You have 4 series pending to watch</p>
-            <!--<p class="info">Congrats! You've watched all your series</p>-->
             <ul class="series-list">
             </ul>
           </section>
           <section class="series-watched">
             <h3 class="subsection-title">Watched series</h3>
-            <p class="info">You have watched 4 series</p>
-            <!--<p class="info">You already have not watched any serie</p>-->
             <ul class="series-list series-list--watched">
             </ul>
           </section>
         </section>
       </main>`;
+  }
+
+  watchedHeader() {
+    const infoWatchedSeries = document.querySelector(".series-watched h3");
+    let counter = 0;
+    this.seriesList.forEach((serie) => {
+      if (serie.watched) {
+        counter += 1;
+      } else {
+        counter += 0;
+      }
+    });
+    if (counter === 0) {
+      new CounterParagraph(
+        infoWatchedSeries,
+        "You already have not",
+        "watched any serie"
+      );
+    }
+    new CounterParagraph(
+      infoWatchedSeries,
+      "You have watched",
+      "series",
+      counter
+    );
+  }
+
+  unWatchedHeader() {
+    const infoPendingSeries = document.querySelector(".series-pending h3");
+    let counter = 0;
+    this.seriesList.forEach((serie) => {
+      if (!serie.watched) {
+        counter += 1;
+      } else {
+        counter += 0;
+      }
+    });
+    if (counter === 0) {
+      new CounterParagraph(
+        infoPendingSeries,
+        "Congrats! You've watched all",
+        "your series"
+      );
+    }
+    new CounterParagraph(
+      infoPendingSeries,
+      "You have",
+      "series pending to watch",
+      counter
+    );
   }
 }
 

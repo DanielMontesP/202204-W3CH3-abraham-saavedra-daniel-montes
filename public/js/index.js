@@ -12,6 +12,7 @@ const createCard = () => {
   const watchedSeriesList = document.querySelector(
     ".series-list.series-list--watched"
   );
+
   const seriesList = [...series.series, { deleted: false }];
 
   seriesList.forEach((serie) => {
@@ -26,6 +27,7 @@ const createCard = () => {
         serie.deleted
       );
     }
+
   });
 };
 

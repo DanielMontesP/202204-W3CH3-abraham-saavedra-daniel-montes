@@ -1,4 +1,6 @@
-const series = [
+import CardMovieComponent from "./CardMovieComponent.js";
+
+const seriesList = [
   {
     id: 1,
     name: "The Sopranos",
@@ -9,7 +11,6 @@ const series = [
     watched: true,
     score: 5,
     emmies: 21,
-    deleted: false,
   },
   {
     id: 2,
@@ -21,7 +22,6 @@ const series = [
     watched: false,
     score: 0,
     emmies: 164,
-    deleted: false,
   },
   {
     id: 3,
@@ -33,30 +33,24 @@ const series = [
     watched: true,
     score: 5,
     emmies: 116,
-    deleted: false,
-  },
-  {
-    id: 4,
-    name: "6 feet under",
-    creator: "Alan Ball",
-    year: 2001,
-    poster: "https://www.cine.com/media/series/2711.jpg",
-    watched: true,
-    score: 5,
-    emmies: 53,
-    deleted: false,
-  },
-  {
-    id: 5,
-    name: "Atypical",
-    creator: "Robia Rashid",
-    year: 2017,
-    poster: "https://www.cine.com/media/series/2711.jpg",
-    watched: false,
-    score: 0,
-    emmies: 0,
-    deleted: false,
   },
 ];
 
-export default series;
+describe("Given a CardMovieComponent class constructor", () => {
+  let ownUl;
+  beforeEach(() => {
+    ownUl = document.createElement("ul");
+    ownUl.classList.add("series-list");
+  });
+  describe("When we instenciated a new CardMovieComponent", () => {
+    test("Then is should render a li tag in to ul with class='series-list'", () => {
+      new CardMovieComponent(ownUl, seriesList);
+
+      expect(ownUl.querySelector("li")).not.toBeNull();
+    });
+  });
+
+  describe("When we instenciated a new CardMovieComponent", () => {
+    test("Then is should render li with class='serie'", () => {});
+  });
+});
