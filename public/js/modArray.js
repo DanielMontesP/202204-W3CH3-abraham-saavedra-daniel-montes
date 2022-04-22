@@ -1,15 +1,16 @@
-import series from "./series/series.js";
-
-const modArray = (arrayToMod, itemPos, newValue) => {
-  switch (arrayToMod) {
+const ModArray = (arrayToMod, itemPos, itemToMod, newValue) => {
+  switch (itemToMod) {
     case "watched":
-      series.series[itemPos].watched = newValue;
+      arrayToMod.series[itemPos][itemToMod] =
+        newValue; /* eslint-disable no-param-reassign */
       break;
-    case "series":
-      series.series[itemPos].watched = newValue;
+    case "score":
+      arrayToMod.series[itemPos][
+        itemToMod
+      ] += 1; /* eslint-disable no-param-reassign */
       break;
     default:
   }
 };
 
-export default modArray;
+export default ModArray;

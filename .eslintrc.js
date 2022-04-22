@@ -15,7 +15,7 @@ module.exports = {
     "no-plusplus": "off",
     "no-restricted-syntax": "off",
     "no-new": "off",
-
+    "no-param-reassign": "off",
     "lines-between-class-members": [
       "error",
       "always",

@@ -1,18 +1,26 @@
+import DelItemArray from "../DelItemArray.js";
+import series from "../series/series.js";
 import Component from "./Component.js";
 
+let idBtClose = "";
 class CardMovieComponent extends Component {
+  id;
   serie;
   name;
   creator;
   poster;
-  constructor(parentElement, serie, id, name, creator, poster) {
+  deleted;
+  constructor(parentElement, serie, id, name, creator, poster, deleted) {
     super(parentElement, "li", `serie serie--${id}`);
 
+    this.id = id;
     this.serie = serie;
     this.name = name;
     this.creator = creator;
     this.poster = poster;
+    this.deleted = deleted;
     this.render();
+    this.addEvents();
   }
 
   render() {
@@ -25,7 +33,7 @@ class CardMovieComponent extends Component {
                 <p class="serie__info">${this.creator} (1999)</p>
                 <ul class="score">
                   <li class="score__star">
-                    <i class="icon--score fas fa-star" title="1/5"></i>
+                    <i class="icon--score fas fa-star" title="1/5"><a href="javascript:modArray(series,1,1)"></a></i>
                   </li>
                   <li class="score__star">
                     <i class="icon--score fas fa-star" title="2/5"></i>
@@ -41,6 +49,18 @@ class CardMovieComponent extends Component {
                   </li>
                 </ul>
                 <i class="fas fa-times-circle icon--delete icon--${this.id}"></i>`;
+    idBtClose = this.id;
+  }
+
+  addEvents() {
+    const itemClass = ".icon--" + idBtClose;
+    const iconDelete = document.querySelector(itemClass);
+    iconDelete.addEventListener("click", function clikis() {
+      let iconId = String(this.className);
+      iconId = iconId.replace("fas fa-times-circle icon--delete icon--", "");
+
+      DelItemArray(series, "deleted", iconId - 1);
+    });
   }
 }
 
