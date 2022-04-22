@@ -3,7 +3,9 @@ import CardMovieComponent from "./componentes/CardMovieComponent.js";
 import ContainerComponent from "./componentes/ContainerComponent.js";
 
 const container = document.querySelector(".container");
-const mainPage = new ContainerComponent(container); // eslint-disable no-unused-vars
+const mainPage = new ContainerComponent(
+  container
+); /* eslint-disable no-unused-vars */
 
 const createCard = () => {
   const unWatchedSerieList = document.querySelector(".series-list");
