@@ -1,5 +1,5 @@
 import DelItemArray from "../DelItemArray.js";
-import series from "../series/series.js";
+import { series as seriesCMComp } from "../series/series.js";
 import Component from "./Component.js";
 
 let idBtClose = "";
@@ -58,7 +58,7 @@ class CardMovieComponent extends Component {
       let iconId = String(this.className);
       iconId = iconId.replace("fas fa-times-circle icon--delete icon--", "");
 
-      DelItemArray(series, "deleted", iconId - 1);
+      DelItemArray(seriesCMComp, "deleted", iconId - 1);
     });
   }
 }
