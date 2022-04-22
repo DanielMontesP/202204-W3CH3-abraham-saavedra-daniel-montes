@@ -1,15 +1,16 @@
 import series from "./series/series.js";
 import CardMovieComponent from "./componentes/CardMovieComponent.js";
 
-// import ContainerComponent from "./componentes/ContainerComponent.js";
-// const container = document.querySelector(".container");
-//const mainPage = new ContainerComponent(container);
+import ContainerComponent from "./componentes/ContainerComponent.js";
+const container = document.querySelector(".container");
+const mainPage = new ContainerComponent(container);
 
 const createCard = () => {
   const unWatchedSerieList = document.querySelector(".series-list");
   const watchedSeriesList = document.querySelector(
     ".series-list.series-list--watched"
   );
+  debugger;
   const seriesList = [...series.series, { deleted: false }];
 
   seriesList.forEach((serie) => {
