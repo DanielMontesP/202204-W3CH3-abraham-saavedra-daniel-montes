@@ -53,7 +53,8 @@ class CardMovieComponent extends Component {
   }
 
   addEvents() {
-    const iconDelete = document.querySelector(".icon--" + idBtClose);
+    const itemClass = ".icon--" + idBtClose;
+    const iconDelete = document.querySelector(itemClass);
     iconDelete.addEventListener("click", function clikis() {
       let iconId = String(this.className);
       iconId = iconId.replace("fas fa-times-circle icon--delete icon--", "");
